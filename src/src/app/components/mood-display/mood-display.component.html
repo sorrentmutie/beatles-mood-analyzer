@@ -1,0 +1,16 @@
+<div class="mood-display" *ngIf="selectedSong && moodResult">
+  <div class="mood-card" [style.background-color]="moodResult.color">
+    <div class="mood-emoji">{{ moodResult.emoji }}</div>
+    <h2 class="mood-type">{{ moodResult.type }}</h2>
+    <div class="song-info">
+      <h3>"{{ selectedSong.title }}"</h3>
+      <p>by The Beatles</p>
+      <small>{{ selectedSong.album }}</small>
+    </div>
+    <p class="mood-description">{{ moodResult.description }}</p>
+  </div>
+</div>
+
+<div class="no-selection" *ngIf="!selectedSong">
+  <p>🎵 Select a Beatles song above to discover your mood! 🎵</p>
+</div>

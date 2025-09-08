@@ -1,0 +1,116 @@
+.song-selector {
+  margin-bottom: 40px;
+}
+
+.song-selector h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+  font-size: 1.8rem;
+}
+
+.songs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.song-card {
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 3px solid transparent;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.song-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.5s ease;
+}
+
+.song-card:hover::before {
+  left: 100%;
+}
+
+.song-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.song-card.selected {
+  border-color: #FFD700;
+  background: linear-gradient(135deg, #FFF9E6, #FFFFFF);
+  transform: translateY(-3px);
+}
+
+.song-card h3 {
+  color: #333;
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.song-card .album {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+  font-style: italic;
+}
+
+.mood-badge {
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: capitalize;
+  color: white;
+}
+
+.mood-badge[data-mood="happy"] {
+  background: #FFD700;
+  color: #333;
+}
+
+.mood-badge[data-mood="sad"] {
+  background: #4169E1;
+}
+
+.mood-badge[data-mood="energetic"] {
+  background: #FF4500;
+}
+
+.mood-badge[data-mood="peaceful"] {
+  background: #90EE90;
+  color: #333;
+}
+
+.mood-badge[data-mood="nostalgic"] {
+  background: #DDA0DD;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .songs-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .song-card {
+    padding: 15px;
+  }
+  
+  .song-selector h2 {
+    font-size: 1.5rem;
+  }
+}

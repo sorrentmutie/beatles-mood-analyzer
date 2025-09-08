@@ -1,0 +1,16 @@
+<div class="song-selector">
+  <h2>Choose Your Beatles Song</h2>
+  <div class="songs-grid">
+    <div 
+      *ngFor="let song of songs" 
+      class="song-card"
+      [class.selected]="selectedSong?.id === song.id"
+      (click)="onSongSelect(song)">
+      <h3>{{ song.title }}</h3>
+      <p class="album">{{ song.album }}</p>
+      <span class="mood-badge" [attr.data-mood]="song.moodCategory">
+        {{ song.moodCategory }}
+      </span>
+    </div>
+  </div>
+</div>
