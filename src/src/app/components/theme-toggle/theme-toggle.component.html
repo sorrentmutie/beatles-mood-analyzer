@@ -1,0 +1,12 @@
+<button 
+  class="theme-toggle-btn" 
+  (click)="toggleTheme()"
+  [attr.aria-label]="(currentTheme$ | async) === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'"
+  title="Toggle theme">
+  <span class="theme-icon">
+    {{ (currentTheme$ | async) === 'dark' ? '☀️' : '🌙' }}
+  </span>
+  <span class="theme-text">
+    {{ (currentTheme$ | async) === 'dark' ? 'Light' : 'Dark' }}
+  </span>
+</button>
