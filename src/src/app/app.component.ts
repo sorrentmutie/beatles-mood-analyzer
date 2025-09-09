@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { SongSelectorComponent } from './components/song-selector/song-selector.component';
 import { MoodDisplayComponent } from './components/mood-display/mood-display.component';
+import { ThemeToggleComponent } from './components/theme-toggle/theme-toggle.component';
 import { MoodResult, Song } from './models/song.model';
 import { MoodService } from './services/mood.service';
 
 @Component({
   selector: 'app-root',
-  imports: [SongSelectorComponent, MoodDisplayComponent],
+  imports: [SongSelectorComponent, MoodDisplayComponent, ThemeToggleComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

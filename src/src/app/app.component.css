@@ -1,17 +1,29 @@
 .app-container {
   max-width: 1200px;
   margin: 0 auto;
-  background: rgba(255, 255, 255, 0.95);
+  background: var(--app-bg);
   border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 30px var(--card-shadow-hover);
   overflow: hidden;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
 .app-header {
-  background: linear-gradient(135deg, #FFD700, #FFA500);
+  background: linear-gradient(135deg, var(--header-gradient-start), var(--header-gradient-end));
   padding: 40px;
-  text-align: center;
-  color: #333;
+  color: var(--header-text-color);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.header-text {
+  flex: 1;
 }
 
 .app-header h1 {
@@ -33,6 +45,12 @@
 @media (max-width: 768px) {
   .app-header {
     padding: 30px 20px;
+  }
+  
+  .header-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
   }
   
   .app-header h1 {

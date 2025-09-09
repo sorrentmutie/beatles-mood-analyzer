@@ -4,9 +4,10 @@
 
 .song-selector h2 {
   text-align: center;
-  color: #333;
+  color: var(--main-text-color);
   margin-bottom: 30px;
   font-size: 1.8rem;
+  transition: color 0.3s ease;
 }
 
 .songs-grid {
@@ -16,13 +17,13 @@
 }
 
 .song-card {
-  background: white;
+  background: var(--card-bg);
   border-radius: 15px;
   padding: 20px;
   cursor: pointer;
   transition: all 0.3s ease;
-  border: 3px solid transparent;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border: 3px solid var(--card-border);
+  box-shadow: 0 4px 15px var(--card-shadow);
   position: relative;
   overflow: hidden;
 }
@@ -34,7 +35,7 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  background: linear-gradient(90deg, transparent, var(--shimmer-effect), transparent);
   transition: left 0.5s ease;
 }
 
@@ -44,27 +45,29 @@
 
 .song-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 25px var(--card-shadow-hover);
 }
 
 .song-card.selected {
-  border-color: #FFD700;
-  background: linear-gradient(135deg, #FFF9E6, #FFFFFF);
+  border-color: var(--card-selected-border);
+  background: var(--card-selected-bg);
   transform: translateY(-3px);
 }
 
 .song-card h3 {
-  color: #333;
+  color: var(--main-text-color);
   font-size: 1.3rem;
   margin-bottom: 8px;
   font-weight: bold;
+  transition: color 0.3s ease;
 }
 
 .song-card .album {
-  color: #666;
+  color: var(--secondary-text-color);
   font-size: 0.9rem;
   margin-bottom: 15px;
   font-style: italic;
+  transition: color 0.3s ease;
 }
 
 .mood-badge {

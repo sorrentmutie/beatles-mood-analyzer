@@ -5,17 +5,18 @@
 }
 
 .mood-card {
-  background: white;
+  background: var(--mood-card-bg);
   border-radius: 20px;
   padding: 40px;
   text-align: center;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 30px var(--card-shadow-hover);
   max-width: 500px;
   width: 100%;
   border: 4px solid;
   position: relative;
   overflow: hidden;
   animation: slideInUp 0.6s ease-out;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
 @keyframes slideInUp {
@@ -51,55 +52,62 @@
   font-size: 2.2rem;
   font-weight: bold;
   margin-bottom: 20px;
-  color: #333;
+  color: var(--main-text-color);
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  transition: color 0.3s ease;
 }
 
 .song-info {
   margin-bottom: 25px;
   padding: 20px;
-  background: rgba(255, 255, 255, 0.5);
+  background: var(--no-selection-bg);
   border-radius: 15px;
-  border: 2px solid rgba(0, 0, 0, 0.1);
+  border: 2px solid var(--mood-card-border);
+  transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 .song-info h3 {
   font-size: 1.5rem;
-  color: #333;
+  color: var(--main-text-color);
   margin-bottom: 5px;
   font-weight: bold;
+  transition: color 0.3s ease;
 }
 
 .song-info p {
   font-size: 1.1rem;
-  color: #666;
+  color: var(--secondary-text-color);
   margin-bottom: 3px;
+  transition: color 0.3s ease;
 }
 
 .song-info small {
   font-size: 0.9rem;
-  color: #888;
+  color: var(--tertiary-text-color);
   font-style: italic;
+  transition: color 0.3s ease;
 }
 
 .mood-description {
   font-size: 1.1rem;
   line-height: 1.6;
-  color: #333;
+  color: var(--main-text-color);
   font-style: italic;
   max-width: 400px;
   margin: 0 auto;
+  transition: color 0.3s ease;
 }
 
 .no-selection {
   text-align: center;
   padding: 60px 20px;
-  color: #666;
+  color: var(--secondary-text-color);
   font-size: 1.2rem;
   font-style: italic;
-  background: rgba(255, 255, 255, 0.8);
+  background: var(--no-selection-bg);
   border-radius: 15px;
-  border: 2px dashed #ccc;
+  border: 2px dashed var(--no-selection-border);
+  transition: all 0.3s ease;
 }
 
 @media (max-width: 768px) {
