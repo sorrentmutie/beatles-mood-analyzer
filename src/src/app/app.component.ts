@@ -19,6 +19,8 @@ export class AppComponent {
 
   onSongSelected(song: Song): void {
     this.selectedSong = song;
-    this.moodResult = this.moodService.analyzeMood(song);
+    this.moodService.analyzeMood(song).subscribe(result => {
+      this.moodResult = result;
+    });
   }
 }
